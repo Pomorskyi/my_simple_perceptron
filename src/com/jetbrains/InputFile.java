@@ -116,6 +116,9 @@ public class InputFile {
             }
 
             decision = line.substring(line.lastIndexOf(" ") + 1);
+            if (decision.charAt(0) == '\t') {
+                decision = decision.substring(1);
+            }
         }
 
         @Override
