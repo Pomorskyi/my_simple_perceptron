@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Perceptron {
 
-    public static final double delta = 0.98;
+    public static double delta = 0.97d;
     public String expectName;
     public double[] vectorOfWeights;
     public double speedOfLearning;
@@ -39,7 +39,6 @@ public class Perceptron {
 
     public void learnPerceptron(List<InputFile.Record> records) {
         System.out.println();
-        System.out.println("Teaching perceptron: " + expectName);
 //        System.out.println("\tPREDICTED_VALUE\t\t|\tWEIGHTS\t\t\t\t\t\t|\tERROR");
         for (int k = 1; k <= records.size(); k++) {
 //            System.out.print(k + ".\t");
@@ -60,7 +59,10 @@ public class Perceptron {
 //        System.out.print("\t" + predicted_sum + "\t\t|");
 
 //        System.out.print("\t" + Arrays.toString(vectorOfWeights) + "\t|");
-        double error = errorValue(predicted_sum, expected_value);
+//        double error = errorValue(predicted_sum, expected_value);
+//        if (record.decision.compareTo(this.expectName) == 0) {
+//            delta = predicted_sum;
+//        }
         double[] gradient = new double[this.vectorOfWeights.length];
 
         //counting gradient
